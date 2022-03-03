@@ -1,0 +1,10 @@
+2022-03-03 09:08:46,528 : INFO : utilities : Finished logger configuration!
+2022-03-03 09:08:46,528 : INFO : utilities : -------------------Loading the processed data-------------------
+2022-03-03 09:08:46,609 : INFO : utilities : -------------------Creating and training AutoEncoder-------------------
+2022-03-03 09:08:46,609 : INFO : utilities : -------------------Creating and training AutoEncoder-------------------
+2022-03-03 09:08:46,610 : INFO : utilities : -------------------Training AutoEncoder-------------------
+2022-03-03 09:09:36,374 : INFO : utilities : -------------------AutoEncoder trained!-------------------
+2022-03-03 09:09:36,375 : INFO : utilities : -------------------Creating and training fully connected net-------------------
+2022-03-03 09:09:59,030 : INFO : utilities : -------------------Fully connected net trained!-------------------
+2022-03-03 09:09:59,030 : INFO : utilities : -------------------Saving model-------------------
+2022-03-03 09:10:00,555 : INFO : utilities : -------------------Model saved!-------------------

@@ -1,0 +1,7 @@
+2022-03-02 22:56:20,703 : INFO : utilities : Finished logger configuration!
+2022-03-02 22:56:20,703 : INFO : utilities : -------------------Pulling in data-------------------
+2022-03-02 22:56:20,797 : INFO : utilities : -------------------Processing the data-------------------
+2022-03-02 22:56:20,812 : INFO : utilities : -------------------Processing features/labels-------------------
+2022-03-02 22:56:21,250 : INFO : utilities : -------------------Exporting to .csv files-------------------
+2022-03-02 22:56:21,936 : INFO : utilities : -------------------Files have been exported-------------------
+2022-03-02 22:56:21,936 : INFO : utilities : -------------------Check the data folder-------------------
