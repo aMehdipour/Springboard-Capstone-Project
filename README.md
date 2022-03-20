@@ -28,3 +28,14 @@ In order to run the code, please first make sure you have all of the packages in
 All of these files use the click package to support command line inputs for the file locations to be use in each respective script. 
 
 ### <span style="color:red">**NOTE**: </span> The click package command line inputs must be in string format **WITHOUT** quotes in order to work correctly. For example, the data is nominally in the data folder, and if I wanted to run the ParseData.py file on the train.txt file contained in data, the input I would give when prompted by the command line would be ../data/train.txt **NOT** '../data/train.txt' or "../data/train.txt". Adding quotes or any other punctuation will cause the code to fail. This is because click automatically converts the input text to a Python string, and inputting '../data/train.txt' in the command line will result in the input directory being  ''../data/train.txt'' which is invalid.
+
+## Training Results
+
+Training losses:
+
+![](training_loss.png)
+
+
+Prediction results:
+
+![](predictions.png)
