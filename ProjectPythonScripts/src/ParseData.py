@@ -38,6 +38,14 @@ def pullAndParseData(trainData, testData, rulData):
     test = pd.read_csv(f"{testData}", sep=' ', names=col_names)
     RUL = pd.read_csv(f"{rulData}", sep=' ', names=['remaining_cycles', 'Nan'])
 
+    if train.shape[1] != len(col_names):
+        raise ValueError(
+            "Your training data does not contain the correct number of columns")
+
+    if test.shape[1] != len(col_names):
+        raise ValueError(
+            "Your training data does not contain the correct number of columns")
+
     # Drop data that contains NaNs
     train.drop(columns=['s22', 's23'], axis=1, inplace=True)
     test.drop(columns=['s22', 's23'], axis=1, inplace=True)
@@ -63,6 +71,8 @@ def pullAndParseData(trainData, testData, rulData):
                     'remaining_cycles'], axis=1)
     X_test = test.drop(['id', 'cycle', 'setting2', 'setting3', 'T2', 'T24', 'epr', 'farB', 'Nf_dmd', 'PCNfR_dmd',
                         'remaining_cycles'], axis=1)
+
+    X_test_non_normal = X_test
 
     logger.info(
         "-------------------Processing features/labels-------------------")
@@ -99,6 +109,7 @@ def pullAndParseData(trainData, testData, rulData):
     X_test.to_csv('../data/testdata.csv')
     y.to_csv('../data/traininglabels.csv')
     y_test.to_csv('../data/testinglabels.csv')
+    X_test_non_normal.to_csv('../data/unnormalizedTestData.csv')
 
     logger.info(
         "-------------------Files have been exported-------------------")

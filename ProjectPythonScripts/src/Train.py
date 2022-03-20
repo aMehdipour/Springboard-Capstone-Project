@@ -14,9 +14,11 @@ from utilities import set_logger
 
 
 @click.command()
-@click.option('--trainData', 'trainData', prompt='Enter the full path of the training files: ',
+@click.option('--featureData', 'featureData', prompt='Enter the full path of the modified feature csv: ',
               help='Point to the processed training data files.')
-def train(trainData):
+@click.option('--labelData', 'labelData', prompt='Enter the full path of the modified label csv: ',
+              help='Point to the processed training data files.')
+def train(featureData, labelData):
     """
     Purpose:
         Train and return a model based on input training data
@@ -32,18 +34,17 @@ def train(trainData):
     # Load in data
     logger.info(
         f"-------------------Loading the processed data-------------------")
-    filePath = Path(trainData)
-    xPath = filePath / "trainingdata.csv"
-    yPath = filePath / "traininglabels.csv"
 
-    X = pd.read_csv(xPath)
+    X = pd.read_csv(Path(featureData))
     X = X.drop(columns='Unnamed: 0')
     X = np.array(X)
-    y = pd.read_csv(yPath)
+    y = pd.read_csv(Path(labelData))
     y = y.drop(columns='Unnamed: 0')
 
     # Check to make sure X and Y have the same number of data points
-    assert X.shape[0] == y.shape[0]
+    if X.shape[0] != y.shape[0]:
+        raise ValueError(
+            "Your features and labels do not contain the same amount of values")
 
     logger.info(
         f"-------------------Creating and training AutoEncoder-------------------")
