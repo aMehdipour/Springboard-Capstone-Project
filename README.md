@@ -29,6 +29,8 @@ All of these files use the click package to support command line inputs for the 
 
 ### <span style="color:red">**NOTE**: </span> The click package command line inputs must be in string format **WITHOUT** quotes in order to work correctly. For example, the data is nominally in the data folder, and if I wanted to run the ParseData.py file on the train.txt file contained in data, the input I would give when prompted by the command line would be ../data/train.txt **NOT** '../data/train.txt' or "../data/train.txt". Adding quotes or any other punctuation will cause the code to fail. This is because click automatically converts the input text to a Python string, and inputting '../data/train.txt' in the command line will result in the input directory being  ''../data/train.txt'' which is invalid.
 
+### NOTE: The ParseData.py file outputs the parsed and transformed features and labels as trainingdata.csv, testdata.csv, traininglabels.csv, testinglabels.csv, and unnormalizedTestData.csv into the data folder. In order to run Train.py, you will have to provide the path trainingdata.csv and traininglabels.csv. For Predict.py, just input the path to the data folder (do not specify a specific file) and the path the to saved model. The un-normalized data file is used for the Gradio application.
+
 ## Training Results
 
 Training losses:
