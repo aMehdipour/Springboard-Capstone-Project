@@ -33,9 +33,9 @@ All of these files use the click package to support command line inputs for the 
 
 Training losses:
 
-![](training_loss.png)
+![](https://github.com/aMehdipour/Springboard-Capstone-Project/blob/main/training_loss.PNG)
 
 
 Prediction results:
 
-![](predictions.png)
+![](https://github.com/aMehdipour/Springboard-Capstone-Project/blob/main/predictions.PNG)
